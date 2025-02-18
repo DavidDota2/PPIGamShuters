@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="ru" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>destroi_object &#8212; документация PPiGameShuters 0.1</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=686e5160" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=490fdf2e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=5b699b7f"></script>
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Исходный код destroi_object</h1><div class="highlight"><pre>
+<span></span><span class="c1"># ui.py</span>
+<div class="viewcode-block" id="MainMenu">
+<a class="viewcode-back" href="../destroi_object.html#destroi_object.MainMenu">[документация]</a>
+<span class="k">class</span> <span class="nc">MainMenu</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Класс для управления главным меню игры.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Инициализация кнопок главного меню.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Новая игра&quot;</span><span class="p">,</span> <span class="s2">&quot;Продолжить&quot;</span><span class="p">,</span> <span class="s2">&quot;Настройки&quot;</span><span class="p">,</span> <span class="s2">&quot;Выход&quot;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="MainMenu.display_menu">
+<a class="viewcode-back" href="../destroi_object.html#destroi_object.MainMenu.display_menu">[документация]</a>
+    <span class="k">def</span> <span class="nf">display_menu</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Отображает главное меню с доступными кнопками.&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Главное меню:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">button</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">buttons</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">button</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="HUD">
+<a class="viewcode-back" href="../destroi_object.html#destroi_object.HUD">[документация]</a>
+<span class="k">class</span> <span class="nc">HUD</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Класс для отображения HUD (интерфейса в игре).&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Инициализация параметров HUD: здоровье, боеприпасы, мини-карта.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">health</span> <span class="o">=</span> <span class="mi">100</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ammo</span> <span class="o">=</span> <span class="mi">30</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">minimap</span> <span class="o">=</span> <span class="s2">&quot;Мини-карта&quot;</span>
+
+<div class="viewcode-block" id="HUD.display_hud">
+<a class="viewcode-back" href="../destroi_object.html#destroi_object.HUD.display_hud">[документация]</a>
+    <span class="k">def</span> <span class="nf">display_hud</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Отображает текущее состояние HUD.&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Здоровье: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">health</span><span class="si">}</span><span class="s2">, Боеприпасы: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ammo</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">minimap</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="PauseMenu">
+<a class="viewcode-back" href="../destroi_object.html#destroi_object.PauseMenu">[документация]</a>
+<span class="k">class</span> <span class="nc">PauseMenu</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Класс для управления меню паузы.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Инициализация опций меню паузы.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Сохранить игру&quot;</span><span class="p">,</span> <span class="s2">&quot;Настройки&quot;</span><span class="p">,</span> <span class="s2">&quot;Вернуться в игру&quot;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="PauseMenu.display_pause_menu">
+<a class="viewcode-back" href="../destroi_object.html#destroi_object.PauseMenu.display_pause_menu">[документация]</a>
+    <span class="k">def</span> <span class="nf">display_pause_menu</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Отображает меню паузы с доступными опциями.&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Меню паузы:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">option</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">PPiGameShuters</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Навигация</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">Модуль ui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../character_control.html">Модуль character_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../combat_system.html">Модуль combat_system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../camera.html">Модуль camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../destroi_object.html">Модуль destroi_object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enemy.html">Модуль enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main_menu.html">Модуль main_menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../map.html">Модуль map</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../movment.html">Модуль movment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../multiplayer.html">Модуль multiplayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spawnpoint.html">Модуль spawnpoint</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Код модуля</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, David Podzol.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

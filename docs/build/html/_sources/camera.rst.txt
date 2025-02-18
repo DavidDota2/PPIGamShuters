@@ -1,0 +1,7 @@
+Модуль camera
+===========================
+
+.. automodule:: camera
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,27 +1,54 @@
-# ui.py
-class MainMenu:
-    def __init__(self):
-        self.buttons = ["Новая игра", "Продолжить", "Настройки", "Выход"]
+# combat_system.py
+class Weapon:
+    """Класс для управления оружием."""
+    def __init__(self, name, damage):
+        """Инициализация оружия.
+        
+        Args:
+            name (str): Название оружия.
+            damage (int): Урон, наносимый оружием.
+        """
+        self.name = name
+        self.damage = damage
 
-    def display_menu(self):
-        print("Главное меню:")
-        for button in self.buttons:
-            print(f"- {button}")
+    def shoot(self):
+        """Запускает стрельбу из оружия."""
+        print(f"{self.name} стреляет, наносит {self.damage} урона")
 
-class HUD:
-    def __init__(self):
-        self.health = 100
-        self.ammo = 30
-        self.minimap = "Мини-карта"
 
-    def display_hud(self):
-        print(f"Здоровье: {self.health}, Боеприпасы: {self.ammo}, {self.minimap}")
+class Enemy:
+    """Класс для управления врагами."""
+    def __init__(self, health):
+        """Инициализация врага.
+        
+        Args:
+            health (int): Здоровье врага.
+        """
+        self.health = health
 
-class PauseMenu:
-    def __init__(self):
-        self.options = ["Сохранить игру", "Настройки", "Вернуться в игру"]
+    def take_damage(self, damage):
+        """Наносит урон врагу.
+        
+        Args:
+            damage (int): Количество урона.
+        """
+        self.health -= damage
+        if self.health <= 0:
+            print("Враг убит")
+        else:
+            print(f"Враг получил {damage} урона, осталось {self.health} здоровья")
 
-    def display_pause_menu(self):
-        print("Меню паузы:")
-        for option in self.options:
-            print(f"- {option}")
+
+class EnemyAI:
+    """Класс для управления искусственным интеллектом врагов."""
+    def patrol(self):
+        """Заставляет врага патрулировать."""
+        print("Враг патрулирует")
+
+    def react_to_sound(self):
+        """Заставляет врага реагировать на звук."""
+        print("Враг реагирует на звук")
+
+    def attack_player(self):
+        """Заставляет врага атаковать игрока."""
+        print("Враг атакует игрока")

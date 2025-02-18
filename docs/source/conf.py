@@ -8,7 +8,8 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../ui'))  # Указываем путь к корню проекта
-sys.path.insert(0, os.path.abspath('../../characterSkripts')) 
+sys.path.insert(0, os.path.abspath('../../characterSkripts'))
+sys.path.insert(0, os.path.abspath('../../object'))  
 
 project = 'PPiGameShuters'
 copyright = '2025, David Podzol'
