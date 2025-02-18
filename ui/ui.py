@@ -1,7 +1,7 @@
 # ui.py
 class MainMenu:
     def __init__(self):
-        self.buttons = ["Новая игра", "Продолжить", "Настройки", "Выход"]
+        self.buttons = ["Новая игра", "Продолжить", "Настройки", "Выход" "Таков путь"]
 
     def display_menu(self):
         print("Главное меню:")
