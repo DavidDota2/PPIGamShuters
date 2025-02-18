@@ -1,7 +1,7 @@
 # ui.py
 class MainMenu:
     def __init__(self):
-        self.buttons = ["Новая игра", "Продолжить", "Настройки", "Выход"]
+        self.buttons = ["Новая игра", "Продолжить", "Настройки", "Выход" "Таков путь"]
 
     def display_menu(self):
         print("Главное меню:")
@@ -17,11 +17,32 @@ class HUD:
     def display_hud(self):
         print(f"Здоровье: {self.health}, Боеприпасы: {self.ammo}, {self.minimap}")
 
-class PauseMenu:
-    def __init__(self):
-        self.options = ["Сохранить игру", "Настройки", "Вернуться в игру"]
+# combat_system.py
+class Weapon:
+    def __init__(self, name, damage):
+        self.name = name
+        self.damage = damage
 
-    def display_pause_menu(self):
-        print("Меню паузы:")
-        for option in self.options:
-            print(f"- {option}")
+    def shoot(self):
+        print(f"{self.name} стреляет, наносит {self.damage} урона")
+
+class Enemy:
+    def __init__(self, health):
+        self.health = health
+
+    def take_damage(self, damage):
+        self.health -= damage
+        if self.health <= 0:
+            print("Враг убит")
+        else:
+            print(f"Враг получил {damage} урона, осталось {self.health} здоровья")
+
+class EnemyAI:
+    def patrol(self):
+        print("Враг патрулирует")
+
+    def react_to_sound(self):
+        print("Враг реагирует на звук")
+
+    def attack_player(self):
+        print("Враг атакует игрока")
