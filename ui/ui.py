@@ -8,15 +8,6 @@ class MainMenu:
         for button in self.buttons:
             print(f"- {button}")
 
-class HUD:
-    def __init__(self):
-        self.health = 100
-        self.ammo = 30
-        self.minimap = "Мини-карта"
-
-    def display_hud(self):
-        print(f"Здоровье: {self.health}, Боеприпасы: {self.ammo}, {self.minimap}")
-
 # combat_system.py
 class Weapon:
     def __init__(self, name, damage):
